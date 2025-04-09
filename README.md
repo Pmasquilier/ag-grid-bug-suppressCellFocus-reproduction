@@ -1,10 +1,10 @@
-# AG Grid Bug #252 Reproduction
+# AG Grid Bug Reproduction
 
-This repository demonstrates the AG Grid bug #252 where the grid cannot draw rows while it is in the middle of rendering.
+This repository demonstrates an AG Grid bug where the grid cannot draw rows while it is in the middle of rendering.
 
 ## The Bug
 
-The bug occurs when using the `suppressCellFocus` prop. This causes the grid to throw error #252 when interacting with rows.
+The bug occurs when using the `suppressCellFocus` prop. This causes the grid to throw an error when interacting with rows.
 
 ## Steps to Reproduce
 
@@ -12,7 +12,7 @@ The bug occurs when using the `suppressCellFocus` prop. This causes the grid to 
 2. Install dependencies with `yarn install`
 3. Start the development server with `yarn dev`
 4. Click on any row in the grid
-5. The error #252 will appear in the console
+5. The error will appear in the console
 
 ## Minimal Code
 
