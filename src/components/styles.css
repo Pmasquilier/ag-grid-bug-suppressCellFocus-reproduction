@@ -1,0 +1,11 @@
+.ag-theme-material.compact .ag-cell {
+  padding: 4px 8px;
+  line-height: 24px;
+  height: 32px;
+}
+
+.ag-theme-material.compact .ag-header-cell {
+  padding: 4px 8px;
+  line-height: 24px;
+  height: 32px;
+} 
