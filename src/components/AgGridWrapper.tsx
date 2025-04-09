@@ -7,9 +7,9 @@ export function AgGridWrapper({ ...props }): ReactElement {
   return (
     <div className="ag-theme-material" style={{ height: '500px' }}>
       <AgGridReact
-        rowSelection="multiple"
         suppressCellFocus
         theme="legacy"
+        getRowId={(params) => params.data.id}
         {...props}
       />
     </div>

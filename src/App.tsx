@@ -36,7 +36,6 @@ function App() {
   const handleClose = () => {
     setSelectedCar(null);
   };
-  
   return (
     <div style={{ padding: 20, height: 'calc(100vh - 40px)' }}>
       <div style={{ height: '100%', width: '100%' }}>

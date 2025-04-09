@@ -4,16 +4,15 @@ This repository demonstrates the AG Grid bug #252 where the grid cannot draw row
 
 ## The Bug
 
-The bug occurs when using `suppressCellFocus` prop with row selection. This combination causes the grid to throw error #252 when selecting rows.
+The bug occurs when using the `suppressCellFocus` prop. This causes the grid to throw error #252 when interacting with rows.
 
 ## Steps to Reproduce
 
 1. Clone this repository
 2. Install dependencies with `yarn install`
 3. Start the development server with `yarn dev`
-4. Select a row in the grid
-5. Click on another row
-6. The error #252 will appear in the console
+4. Click on any row in the grid
+5. The error #252 will appear in the console
 
 ## Minimal Code
 
@@ -29,7 +28,6 @@ export function AgGridWrapper({ ...props }): ReactElement {
   return (
     <div className="ag-theme-material" style={{ height: '500px' }}>
       <AgGridReact
-        rowSelection="multiple"
         suppressCellFocus
         theme="legacy"
         {...props}
@@ -38,6 +36,21 @@ export function AgGridWrapper({ ...props }): ReactElement {
   );
 }
 ```
+
+## Potential Fix
+
+Adding the `getRowId` function can fix this issue:
+
+```tsx
+<AgGridReact
+  suppressCellFocus
+  theme="legacy"
+  getRowId={(params) => params.data.id} // Fixes the bug
+  {...props}
+/>
+```
+
+This suggests that the bug is related to how AG Grid manages row identities during rendering.
 
 ## Environment
 
